@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
 exports.install = install;
@@ -87,35 +87,35 @@ exports.MapElementMixin = _mapElementMixin2.default;
 exports.Autocomplete = _autocomplete2.default;
 exports.MountableMixin = _mountableMixin2.default;
 function install(Vue, options) {
-  options = _lodash2.default.defaults(options, {
-    installComponents: true
-  });
+    options = _lodash2.default.defaults(options, {
+        installComponents: true
+    });
 
-  Vue.use(_deferredReady.DeferredReady);
+    Vue.use(_deferredReady.DeferredReady);
 
-  var defaultResizeBus = new Vue();
-  Vue.$gmapDefaultResizeBus = defaultResizeBus;
-  Vue.mixin({
-    created: function created() {
-      this.$gmapDefaultResizeBus = defaultResizeBus;
+    var defaultResizeBus = new Vue();
+    Vue.$gmapDefaultResizeBus = defaultResizeBus;
+    Vue.mixin({
+        created: function created() {
+            this.$gmapDefaultResizeBus = defaultResizeBus;
+        }
+    });
+
+    if (options.load) {
+        (0, _manager.load)(options.load.key, options.load.v, options.load.libraries, options.load.cn);
     }
-  });
 
-  if (options.load) {
-    (0, _manager.load)(options.load);
-  }
-
-  if (options.installComponents) {
-    Vue.component('GmapMap', _map2.default);
-    Vue.component('GmapMarker', _marker2.default);
-    Vue.component('GmapCluster', _cluster2.default);
-    Vue.component('GmapInfoWindow', _infoWindow2.default);
-    Vue.component('GmapPolyline', _polyline2.default);
-    Vue.component('GmapPolygon', _polygon2.default);
-    Vue.component('GmapCircle', _circle2.default);
-    Vue.component('GmapRectangle', _rectangle2.default);
-    Vue.component('GmapAutocomplete', _autocomplete2.default);
-    Vue.component('GmapPlaceInput', _placeInput2.default);
-    Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
-  }
+    if (options.installComponents) {
+        Vue.component('GmapMap', _map2.default);
+        Vue.component('GmapMarker', _marker2.default);
+        Vue.component('GmapCluster', _cluster2.default);
+        Vue.component('GmapInfoWindow', _infoWindow2.default);
+        Vue.component('GmapPolyline', _polyline2.default);
+        Vue.component('GmapPolygon', _polygon2.default);
+        Vue.component('GmapCircle', _circle2.default);
+        Vue.component('GmapRectangle', _rectangle2.default);
+        Vue.component('GmapAutocomplete', _autocomplete2.default);
+        Vue.component('GmapPlaceInput', _placeInput2.default);
+        Vue.component('GmapStreetViewPanorama', _streetViewPanorama2.default);
+    }
 }
