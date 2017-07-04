@@ -115,7 +115,6 @@ export default {
     deferredReady() {
         const options = _.mapValues(props, (value, prop) => this[prop]);
         options.map = this.$map;
-
         // search ancestors for cluster object
         let search = this.$findAncestor(
             ans => ans.$clusterObject

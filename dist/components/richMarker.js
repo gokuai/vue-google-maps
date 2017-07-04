@@ -24,7 +24,7 @@ var _mapElementMixin = require('./mapElementMixin');
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
-var _richMarker = require('rich-marker');
+var _richMarker = require('../utils/richMarker');
 
 var _richMarker2 = _interopRequireDefault(_richMarker);
 
@@ -97,7 +97,8 @@ exports.default = {
             return _this[prop];
         });
         options.map = this.$map;
-
+        console.log('options', options);
+        options.position = new google.maps.LatLng(options.position.lat, options.position.lng);
         // search ancestors for cluster object
         var search = this.$findAncestor(function (ans) {
             return ans.$clusterObject;

@@ -3,7 +3,7 @@ import eventsBinder from '../utils/eventsBinder.js';
 import propsBinder from '../utils/propsBinder.js';
 import getPropsValuesMixin from '../utils/getPropsValuesMixin.js';
 import MapElementMixin from './mapElementMixin';
-import RichMarker from 'rich-marker';
+import RichMarker from '../utils/richMarker';
 
 const props = {
     draggable: {
@@ -84,7 +84,8 @@ export default {
     deferredReady() {
         const options = _.mapValues(props, (value, prop) => this[prop]);
         options.map = this.$map;
-
+        console.log('options', options);
+        options.position = new google.maps.LatLng(options.position.lat, options.position.lng);
         // search ancestors for cluster object
         let search = this.$findAncestor(
             ans => ans.$clusterObject

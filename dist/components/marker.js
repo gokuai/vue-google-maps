@@ -125,7 +125,6 @@ exports.default = {
             return _this[prop];
         });
         options.map = this.$map;
-
         // search ancestors for cluster object
         var search = this.$findAncestor(function (ans) {
             return ans.$clusterObject;
