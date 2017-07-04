@@ -24,6 +24,7 @@ export {
     load,
     loaded,
     Marker,
+    RichMarker,
     Cluster,
     Polyline,
     Polygon,

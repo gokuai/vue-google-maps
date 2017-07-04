@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.Marker = exports.loaded = exports.load = undefined;
+exports.MountableMixin = exports.Autocomplete = exports.MapElementMixin = exports.PlaceInput = exports.Map = exports.InfoWindow = exports.Rectangle = exports.Circle = exports.Polygon = exports.Polyline = exports.Cluster = exports.RichMarker = exports.Marker = exports.loaded = exports.load = undefined;
 exports.install = install;
 
 var _manager = require('./manager.js');
@@ -79,6 +79,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.load = _manager.load;
 exports.loaded = _manager.loaded;
 exports.Marker = _marker2.default;
+exports.RichMarker = _richMarker2.default;
 exports.Cluster = _cluster2.default;
 exports.Polyline = _polyline2.default;
 exports.Polygon = _polygon2.default;
