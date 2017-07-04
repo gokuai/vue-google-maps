@@ -1,5 +1,6 @@
 import { load, loaded } from './manager.js';
 import Marker from './components/marker';
+import RichMarker from './components/richMarker';
 import Cluster from './components/cluster';
 import Polyline from './components/polyline';
 import Polygon from './components/polygon';
@@ -58,6 +59,7 @@ export function install(Vue, options) {
     if (options.installComponents) {
         Vue.component('GmapMap', Map);
         Vue.component('GmapMarker', Marker);
+        Vue.component('GmapRichMarker', RichMarker);
         Vue.component('GmapCluster', Cluster);
         Vue.component('GmapInfoWindow', InfoWindow);
         Vue.component('GmapPolyline', Polyline);

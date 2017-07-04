@@ -3,60 +3,29 @@ import eventsBinder from '../utils/eventsBinder.js';
 import propsBinder from '../utils/propsBinder.js';
 import getPropsValuesMixin from '../utils/getPropsValuesMixin.js';
 import MapElementMixin from './mapElementMixin';
+import RichMarker from 'rich-marker';
 
 const props = {
-    animation: {
-        twoWay: true,
-        type: Number
-    },
-    attribution: {
-        type: Object,
-    },
-    clickable: {
-        type: Boolean,
-        twoWay: true,
-        default: true
-    },
-    cursor: {
-        type: String,
-        twoWay: true
-    },
     draggable: {
         type: Boolean,
         twoWay: true,
         default: false
     },
-    icon: {
+    flat: {
+        type: Boolean,
+        twoWay: true,
+        default: true
+    },
+    content: {
+        type: String,
         twoWay: true
     },
-    label: {},
-    opacity: {
-        type: Number,
-        default: 1
-    },
-    place: {
-        type: Object
-    },
+
     position: {
         type: Object,
         twoWay: true,
     },
-    shape: {
-        type: Object,
-        twoWay: true
-    },
-    title: {
-        type: String,
-        twoWay: true
-    },
-    zIndex: {
-        type: Number,
-        twoWay: true
-    },
-    visible: {
-        twoWay: true,
-        default: true,
-    },
+
 };
 
 const events = [
@@ -127,7 +96,7 @@ export default {
 
     methods: {
         createMarker(options) {
-            this.$markerObject = new google.maps.Marker(options);
+            this.$markerObject = new RichMarker(options);
             propsBinder(this, this.$markerObject, props);
             eventsBinder(this, this.$markerObject, events);
 
