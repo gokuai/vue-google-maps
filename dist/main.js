@@ -12,6 +12,10 @@ var _marker = require('./components/marker');
 
 var _marker2 = _interopRequireDefault(_marker);
 
+var _richMarker = require('./components/richMarker');
+
+var _richMarker2 = _interopRequireDefault(_richMarker);
+
 var _cluster = require('./components/cluster');
 
 var _cluster2 = _interopRequireDefault(_cluster);
@@ -108,6 +112,7 @@ function install(Vue, options) {
     if (options.installComponents) {
         Vue.component('GmapMap', _map2.default);
         Vue.component('GmapMarker', _marker2.default);
+        Vue.component('GmapRichMarker', _richMarker2.default);
         Vue.component('GmapCluster', _cluster2.default);
         Vue.component('GmapInfoWindow', _infoWindow2.default);
         Vue.component('GmapPolyline', _polyline2.default);

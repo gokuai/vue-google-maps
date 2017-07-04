@@ -24,61 +24,33 @@ var _mapElementMixin = require('./mapElementMixin');
 
 var _mapElementMixin2 = _interopRequireDefault(_mapElementMixin);
 
+var _richMarker = require('rich-marker');
+
+var _richMarker2 = _interopRequireDefault(_richMarker);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var props = {
-    animation: {
-        twoWay: true,
-        type: Number
-    },
-    attribution: {
-        type: Object
-    },
-    clickable: {
-        type: Boolean,
-        twoWay: true,
-        default: true
-    },
-    cursor: {
-        type: String,
-        twoWay: true
-    },
     draggable: {
         type: Boolean,
         twoWay: true,
         default: false
     },
-    icon: {
-        twoWay: true
+    flat: {
+        type: Boolean,
+        twoWay: true,
+        default: true
     },
-    label: {},
-    opacity: {
-        type: Number,
-        default: 1
-    },
-    place: {
-        type: Object
-    },
-    position: {
-        type: Object,
-        twoWay: true
-    },
-    shape: {
-        type: Object,
-        twoWay: true
-    },
-    title: {
+    content: {
         type: String,
         twoWay: true
     },
-    zIndex: {
-        type: Number,
+
+    position: {
+        type: Object,
         twoWay: true
-    },
-    visible: {
-        twoWay: true,
-        default: true
     }
+
 };
 
 var events = ['click', 'rightclick', 'dblclick', 'drag', 'dragstart', 'dragend', 'mouseup', 'mousedown', 'mouseover', 'mouseout'];
@@ -138,7 +110,7 @@ exports.default = {
 
     methods: {
         createMarker: function createMarker(options) {
-            this.$markerObject = new google.maps.Marker(options);
+            this.$markerObject = new _richMarker2.default(options);
             (0, _propsBinder2.default)(this, this.$markerObject, props);
             (0, _eventsBinder2.default)(this, this.$markerObject, events);
 
